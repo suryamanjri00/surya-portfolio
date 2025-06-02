@@ -1,0 +1,1152 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Surya Manjri | Portfolio</title>
+<style>
+    body, html {
+      margin: 0;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      scroll-behavior: smooth;
+      background-color: #fff;
+    }
+
+    .bg-image {
+      background-image: url('IMG_5472.jpeg');
+      filter: brightness(0.6);
+      height: 100vh;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: relative;
+    }
+
+    .content {
+      position: absolute;
+      top: 50%;
+      right: 10%;
+      transform: translateY(-50%);
+      color: white;
+      text-align: right;
+    }
+
+    .content h2, .content h1 {
+      margin: 5px 0;
+    }
+
+    .content h1 {
+      font-size: 3em;
+    }
+
+    .resume-btn {
+      margin-top: 20px;
+    }
+
+    .resume-btn a {
+      text-decoration: none;
+      background-color: #007BFF;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
+    .resume-btn a:hover {
+      background-color: #0056b3;
+    }
+
+    .about-section {
+      background-image: linear-gradient(to bottom, #f0f0f0, #ffffff);
+      background-color: #f9f9f9;
+      padding: 60px 10% 40px;
+      text-align: center;
+    }
+
+    .about-section h2 {
+      font-size: 2.2em;
+      color: #007BFF;
+      margin-bottom: 40px;
+    }
+
+    .about-content {
+      display: flex;
+      align-items: stretch;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+
+    .about-text {
+      background: #ffffff;
+      border-radius: 0 0 40px 40px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 40px;
+      margin-bottom: 40px;
+      flex: 1 1 55%;
+      padding-right: 40px;
+      text-align: left;
+    }
+
+    .about-text p {
+      font-size: 1.05em;
+      color: #555;
+      line-height: 1.6em;
+    }
+
+    .about-text p:first-of-type {
+      font-weight: bold;
+      color: #111;
+    }
+
+    .about-image {
+      flex: 1 1 35%;
+      display: flex;
+      justify-content: center;
+    }
+
+    .about-image img {
+      max-height: 400px;
+      width: auto;
+      max-width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border: 6px solid #ccc;
+      border-radius: 8px;
+    }
+
+    .mission-section {
+      width: 100%;
+      margin-top: 60px;
+    }
+
+    .mission-section h2 {
+      font-size: 2em;
+      color: #007BFF;
+      margin-bottom: 20px;
+    }
+
+    .mission-box {
+      margin: 0 auto;
+      max-width: 80%;
+      padding: 30px;
+      background: #ffffff;
+      border-radius: 20px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      font-size: 1.1em;
+      line-height: 1.8em;
+      color: #333;
+    }
+
+    .mission-box b {
+      color: #000;
+    }
+
+    @media (max-width: 768px) {
+      .about-content {
+        flex-direction: column;
+      }
+
+      .about-text, .about-image {
+        flex: 1 1 100%;
+        text-align: center;
+        padding: 0;
+      }
+
+      .about-text {
+      background: #ffffff;
+      border-radius: 0 0 40px 40px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 40px;
+      margin-bottom: 40px;
+        margin-bottom: 30px;
+      }
+
+      .mission-box {
+        font-size: 1em;
+        padding: 20px;
+      }
+    }
+  </style>
+<style>
+  .navbar {
+    background-color: #222;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+  .logo {
+    color: white;
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+
+  .nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+
+  .nav-links li a:hover {
+    color: #00B4D8;
+  }
+
+  .menu-icon {
+    display: none;
+    font-size: 2em;
+    color: white;
+    cursor: pointer;
+  }
+
+  #menu-toggle {
+    display: none;
+  }
+
+  @media (max-width: 768px) {
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      background: #333;
+      position: absolute;
+      top: 60px;
+      right: 20px;
+      width: 200px;
+      padding: 10px;
+      border-radius: 8px;
+    }
+
+    .nav-links li {
+      margin: 10px 0;
+    }
+
+    #menu-toggle:checked + .menu-icon + .nav-links {
+      display: flex;
+    }
+
+    .menu-icon {
+      display: block;
+    }
+  }
+</style>
+</head>
+<body>
+<header id="home">
+<nav class="navbar">
+<div class="logo">Surya Manjri</div>
+<input id="menu-toggle" type="checkbox"/>
+<label class="menu-icon" for="menu-toggle">☰</label>
+<ul class="nav-links">
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#education">Education</a></li>
+<li><a href="#experience">Experience</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#profiles">Profiles</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+</header>
+<div class="bg-image"></div>
+<div class="content">
+<h2>Hi, I am</h2>
+<h1>Surya Manjri.</h1>
+<h2>Data Scientist</h2>
+<h2>Data Analyst</h2>
+<h2>AI &amp; NLP Enthusiast</h2>
+<div class="resume-btn">
+<a download="" href="resume.pdf">Download Resume</a>
+</div>
+</div>
+<section class="about-section" id="about">
+<h2>ABOUT ME</h2>
+<div class="about-content" id="experience">
+<div class="about-text" id="projects">
+<p>Hi, I'm Surya Manjri – an aspiring Data Scientist passionate about AI, data analysis, and solving real-world problems with data-driven solutions. I'm currently building hands-on experience through projects and continuous learning.</p>
+<p>My passion lies in utilizing data to solve complex business problems, performing in-depth statistical analysis, and developing robust machine learning algorithms. With a solid foundation in Data Science, I bring proficiency in Python, SQL, Excel and experience in creating REST APIs for data storage, processing, and analytics. I am skilled in crafting data visualization dashboards that not only present data effectively but also make it accessible and understandable for everyone.</p>
+</div>
+<div class="about-image">
+<img alt="Surya Manjri" src="IMG_0611.jpeg"/>
+</div>
+</div>
+<div class="mission-section">
+<h2>MISSION</h2>
+<div class="mission-box">
+        I am not just another <b>tech professional</b> — I am a <b>catalyst for transformation</b>. My mission is to empower the world with <b>sustainable AI solutions</b> by combining the potential of <b>Generative AI</b> and <b>Data Intelligence</b> to accelerate <b>human reinvention</b>. I aim to create <b>innovations</b> that promote <b>better living</b>, <b>environmental responsibility</b>, and <b>inclusivity</b>, ensuring that <b>technology</b> serves as a force for <b>global progress</b> and <b>human well-being</b>.
+      </div>
+</div>
+</section>
+<style>
+    .education-section {
+      background-color: #f5f5f5;
+      padding: 60px 10%;
+      text-align: center;
+    }
+
+    .education-section .section-title {
+      font-size: 2.2em;
+      color: #007BFF;
+      margin-bottom: 50px;
+    }
+
+    .education-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      justify-content: center;
+    }
+
+    .education-block {
+      background: white;
+      border-radius: 16px;
+      padding: 30px;
+      max-width: 450px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      text-align: left;
+    }
+
+    .education-block h3 {
+      color: #333;
+      font-size: 1.2em;
+      margin-bottom: 10px;
+    }
+
+    .education-block .degree {
+      font-weight: bold;
+      font-size: 1.1em;
+      color: #555;
+      margin-bottom: 15px;
+    }
+
+    .education-block h4 {
+      font-size: 1em;
+      text-transform: uppercase;
+      color: #000;
+      margin-bottom: 5px;
+    }
+
+    .education-block .location {
+      color: #888;
+      font-size: 0.95em;
+      margin-bottom: 10px;
+    }
+
+    .education-block p {
+      font-size: 0.95em;
+      line-height: 1.6em;
+      color: #444;
+    }
+
+    @media (max-width: 768px) {
+      .education-container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .education-block {
+        width: 100%;
+        max-width: 90%;
+      }
+    }
+  </style>
+<section class="experience-section">
+<h2 class="section-title">EXPERIENCE</h2>
+<div class="timeline-horizontal">
+<div class="timeline-card">
+<div class="dot"></div>
+<div class="timeline-date">Jan 2025 – May 2025</div>
+<div class="timeline-role">Mentor</div>
+<div class="timeline-company">University of New Haven — Connecticut, USA</div>
+<ul>
+<li>Advanced scientific research on clinical data by orchestrating Microbiome Data Analysis using Python &amp; R-programming.</li>
+<li>Designed and deployed strategic data validation procedures while maintaining data consistency to improve data quality.</li>
+<li>Conducted efficient data management using secure cloud storage aligned with data privacy policies.</li>
+<li>Co-authored research paper contributing to Neuroscience literature.</li>
+<li>Optimized clinical ML models for performance and accuracy.</li>
+</ul>
+</div>
+<div class="timeline-card">
+<div class="dot"></div>
+<div class="timeline-date">Nov 2022 – May 2023</div>
+<div class="timeline-role">Data Analyst Intern</div>
+<div class="timeline-company">Adiona Travels Pvt Ltd — Haryana, India</div>
+<ul>
+<li>Created an Automatic Reconciliation Tool tracking 400K+ daily transactions with 78% resource reduction.</li>
+<li>Communicated insights from policy/claims datasets to stakeholders.</li>
+<li>Used SQL to boost reporting accuracy by 30%.</li>
+<li>Achieved 8X defect reduction via analytics.</li>
+</ul>
+</div>
+<div class="timeline-card">
+<div class="dot"></div>
+<div class="timeline-date">Jun 2022 – Oct 2022</div>
+<div class="timeline-role">Data Engineer Intern</div>
+<div class="timeline-company">Adiona Travels Pvt Ltd — Haryana, India</div>
+<ul>
+<li>Analyzed insurance data through Monthly Service Review metrics.</li>
+<li>Applied SQL to extract insights and improve reporting accuracy by 30%.</li>
+<li>Reduced system defects 8X with process improvements.</li>
+<li>Enhanced team efficiency 20% through Excel automation.</li>
+</ul>
+</div>
+</div>
+</section>
+<style>
+    .experience-section {
+      padding: 60px 10%;
+      background: #f9f9f9;
+      text-align: center;
+    }
+
+    .experience-section .section-title {
+      font-size: 2.2em;
+      color: #007BFF;
+      margin-bottom: 60px;
+    }
+
+    .timeline-horizontal {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: flex-start;
+      position: relative;
+    }
+
+    .timeline-card {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+      padding: 20px 25px;
+      width: 300px;
+      position: relative;
+    }
+
+    .dot {
+      width: 14px;
+      height: 14px;
+      background: #007BFF;
+      border-radius: 50%;
+      position: absolute;
+      top: -20px;
+      left: calc(50% - 7px);
+    }
+
+    .timeline-date {
+      font-weight: bold;
+      color: #007BFF;
+      margin-bottom: 8px;
+    }
+
+    .timeline-role {
+      font-size: 1.1em;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .timeline-company {
+      font-size: 0.95em;
+      color: #555;
+      margin-bottom: 10px;
+    }
+
+    .timeline-card ul {
+      padding-left: 20px;
+      text-align: left;
+    }
+
+    .timeline-card ul li {
+      font-size: 0.92em;
+      margin-bottom: 8px;
+      color: #444;
+    }
+
+    @media (max-width: 768px) {
+      .timeline-card {
+        width: 100%;
+        max-width: 90%;
+      }
+    }
+  </style>
+<style>
+    .skills-section {
+      padding: 60px 10%;
+      background: #fff;
+      text-align: center;
+    }
+
+    .skills-section .section-title {
+      font-size: 2.2em;
+      color: #007BFF;
+      margin-bottom: 50px;
+    }
+
+    .skills-category h3 {
+      font-size: 1.4em;
+      color: #333;
+      margin: 30px 0 20px;
+    }
+
+    .icon-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+    }
+
+    .icon-grid div {
+      width: 100px;
+      text-align: center;
+    }
+
+    .icon-grid img {
+      width: 48px;
+      height: 48px;
+      object-fit: contain;
+    }
+
+    .icon-grid p {
+      margin-top: 8px;
+      font-size: 0.9em;
+      color: #444;
+    }
+  </style>
+<style>
+    .skills-section {
+      padding: 60px 10%;
+      background: #f0f8ff;
+      text-align: center;
+    }
+
+    .skills-section .section-title {
+      font-size: 2.2em;
+      color: #007BFF;
+      margin-bottom: 50px;
+    }
+
+    .skills-category h3 {
+      font-size: 1.4em;
+      color: #333;
+      margin: 30px 0 20px;
+    }
+
+    .icon-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+    }
+
+    .icon-grid div {
+      width: 100px;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+      background: #fff;
+      padding: 15px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    .icon-grid div:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+
+    .icon-grid img {
+      width: 48px;
+      height: 48px;
+      object-fit: contain;
+    }
+
+    .icon-grid p {
+      margin-top: 8px;
+      font-size: 0.9em;
+      color: #444;
+    }
+
+    @media (max-width: 768px) {
+      .icon-grid div {
+        width: 80px;
+        padding: 10px;
+      }
+
+      .icon-grid img {
+        width: 36px;
+        height: 36px;
+      }
+
+      .icon-grid p {
+        font-size: 0.8em;
+      }
+    }
+  </style>
+<section class="skills-section" id="skills">
+<h2 class="section-title">SKILLS</h2>
+<div class="skills-category">
+<h3>LANGUAGES</h3>
+<div class="icon-grid">
+<div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"/><p>Python</p></div>
+<div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/r/r-original.svg"/><p>R</p></div>
+<div><img src="https://img.icons8.com/color/48/000000/sas.png"/><p>SAS</p></div>
+<div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"/><p>SQL</p></div>
+<div><img src="https://upload.wikimedia.org/wikipedia/commons/2/21/Matlab_Logo.png"/><p>MATLAB</p></div>
+</div>
+</div>
+<div class="skills-category">
+<h3>LIBRARIES</h3>
+<div class="icon-grid">
+<div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg"/><p>Pandas</p></div>
+<div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg"/><p>NumPy</p></div>
+<div><img src="https://matplotlib.org/_static/logo2.svg"/><p>Matplotlib</p></div>
+<div><img src="https://scikit-learn.org/stable/_static/scikit-learn-logo-small.png"/><p>scikit-learn</p></div>
+<div><img src="https://upload.wikimedia.org/wikipedia/commons/b/b2/SCIPY_2.svg"/><p>SciPy</p></div>
+<div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg"/><p>TensorFlow</p></div>
+<div><img src="https://upload.wikimedia.org/wikipedia/commons/a/ae/Keras_logo.svg"/><p>Keras</p></div>
+<div><img src="https://upload.wikimedia.org/wikipedia/commons/3/32/OpenCV_Logo_with_text_svg_version.svg"/><p>OpenCV</p></div>
+<div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg"/><p>PyTorch</p></div>
+</div>
+</div>
+<div class="skills-category">
+<h3>TECHNOLOGIES</h3>
+<div class="icon-grid">
+<div><img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Flask_logo.svg"/><p>Flask</p></div>
+<div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"/><p>MongoDB</p></div>
+<div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/windows8/windows8-original.svg"/><p>MS-Tools</p></div>
+<div><img src="https://cdn.worldvectorlogo.com/logos/tableau-software.svg"/><p>Tableau</p></div>
+<div><img src="https://img.icons8.com/color/480/power-bi.png"/><p>Power BI</p></div>
+<div><img src="https://www.vectorlogo.zone/logos/snowflake/snowflake-icon.svg"/><p>Snowflake</p></div>
+<div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg"/><p>AWS</p></div>
+<div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg"/><p>Azure</p></div>
+<div><img src="https://grafana.com/static/img/menu/grafana2.svg"/><p>Grafana</p></div>
+<div><img src="https://cdn.icon-icons.com/icons2/2699/PNG/512/canva_logo_icon_170157.png"/><p>Canva</p></div>
+<div><img src="https://cdn-icons-png.flaticon.com/512/5968/5968905.png"/><p>Squarespace</p></div>
+</div>
+</div>
+</section>
+<style>
+    .skills-section {
+      padding: 60px 10%;
+      background: #f0f8ff;
+      text-align: center;
+    }
+
+    .skills-section .section-title {
+      font-size: 2.2em;
+      color: #007BFF;
+      margin-bottom: 50px;
+    }
+
+    .skills-category h3 {
+      font-size: 1.4em;
+      color: #333;
+      margin: 30px 0 20px;
+    }
+
+    .icon-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+    }
+
+    .icon-grid div {
+      width: 100px;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+      background: #fff;
+      padding: 15px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    .icon-grid div:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+
+    .icon-grid img {
+      width: 48px;
+      height: 48px;
+      object-fit: contain;
+    }
+
+    .icon-grid p {
+      margin-top: 8px;
+      font-size: 0.9em;
+      color: #444;
+    }
+
+    @media (max-width: 768px) {
+      .icon-grid div {
+        width: 80px;
+        padding: 10px;
+      }
+
+      .icon-grid img {
+        width: 36px;
+        height: 36px;
+      }
+
+      .icon-grid p {
+        font-size: 0.8em;
+      }
+    }
+  </style>
+<!-- PROJECTS SECTION START -->
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Surya Manjri | Portfolio</title>
+</head>
+<body>
+<section class="projects-section">
+<h2 class="section-title">PROJECTS</h2>
+<div class="projects-grid">
+<a class="project-card" href="https://github.com/suryamanjri00/Tic-Tac-Journey" target="_blank">
+<img alt="Tic-Tac-Toe AI" src="0c62711b-b5bd-426d-9c09-33ee06fdd40f.png"/>
+<p>AI Agents in Tic-Tac-Toe Tournament</p>
+</a>
+<a class="project-card" href="https://github.com/suryamanjri00/Accidental-Drug-Deaths-in-Connecticut-" target="_blank">
+<img alt="Drug Death Data Viz" src="8ed009a0-ddaf-4de5-bed8-4aba4ab2adcd.png"/>
+<p>Accidental Drug Deaths Analysis</p>
+</a>
+<a class="project-card" href="https://github.com/suryamanjri00/WhatsApp_Review_Analysis" target="_blank">
+<img alt="WhatsApp Review Wordcloud" src="ae4c3b7c-a3c7-463e-9fa4-0d7a15a842f9.png"/>
+<p>WhatsApp Review Analysis</p>
+</a>
+<a class="project-card" href="https://github.com/suryamanjri00/University-RAG-Chatbot" target="_blank">
+<img alt="University Chatbot" src="e2895777-eae0-41a2-80a9-4358065deff6.png"/>
+<p>University RAG Chatbot</p>
+</a>
+</div>
+</section>
+<style>
+    .projects-section {
+      padding: 60px 10%;
+      background: #fdfdfd;
+      text-align: center;
+    }
+
+    .projects-section .section-title {
+      font-size: 2.2em;
+      color: #007BFF;
+      margin-bottom: 50px;
+    }
+
+    .projects-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .project-card {
+      width: 270px;
+      background: #ffffff;
+      padding: 15px;
+      border-radius: 12px;
+      text-decoration: none;
+      color: #333;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 22px rgba(0,0,0,0.15);
+    }
+
+    .project-card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .project-card p {
+      margin-top: 12px;
+      font-size: 1em;
+      font-weight: 500;
+    }
+  </style>
+<style>
+    .projects-section {
+      padding: 60px 10%;
+      background: #fdfdfd;
+      text-align: center;
+    }
+
+    .projects-section .section-title {
+      font-size: 2.2em;
+      color: #007BFF;
+      margin-bottom: 50px;
+    }
+
+    .projects-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .project-card {
+      width: 270px;
+      background: #ffffff;
+      padding: 15px;
+      border-radius: 12px;
+      text-decoration: none;
+      color: #333;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 22px rgba(0,0,0,0.15);
+    }
+
+    .project-card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .project-card p {
+      margin-top: 12px;
+      font-size: 1em;
+      font-weight: 500;
+    }
+  </style>
+<section class="profiles-section" id="profiles">
+<h2 class="section-title">PROFILES</h2>
+<div class="profiles-grid">
+<a class="profile-card" href="https://www.linkedin.com/in/surya-manjri-12617b248/" target="_blank">
+<i class="fab fa-linkedin"></i>
+<p>LinkedIn</p>
+</a>
+<a class="profile-card" href="https://github.com/suryamanjri00" target="_blank">
+<i class="fab fa-github"></i>
+<p>GitHub</p>
+</a>
+<a class="profile-card" href="https://huggingface.co/Smanj" target="_blank">
+<img alt="Hugging Face" src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" style="height: 36px;"/>
+<p>Hugging Face</p>
+</a>
+<a class="profile-card" href="mailto:suryamanjri@gmail.com">
+<i class="fas fa-envelope"></i>
+<p>Gmail</p>
+</a>
+</div>
+</section>
+<style>
+  .profiles-section {
+    text-align: center;
+    padding: 60px 10%;
+    background: #fafafa;
+  }
+
+  .profiles-section .section-title {
+    font-size: 2.2em;
+    color: #007BFF;
+    margin-bottom: 40px;
+  }
+
+  .profiles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 30px;
+    justify-items: center;
+  }
+
+  .profile-card {
+    text-decoration: none;
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    color: #333;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 140px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .profile-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  }
+
+  .profile-card i {
+    font-size: 32px;
+    margin-bottom: 10px;
+    color: #007BFF;
+  }
+
+  .profile-card p {
+    margin: 0;
+    font-weight: bold;
+  }
+</style>
+<!-- Font Awesome for icons -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
+<style>
+    .projects-section {
+      padding: 60px 10%;
+      background: #fdfdfd;
+      text-align: center;
+    }
+
+    .projects-section .section-title {
+      font-size: 2.2em;
+      color: #007BFF;
+      margin-bottom: 50px;
+    }
+
+    .projects-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .project-card {
+      width: 270px;
+      background: #ffffff;
+      padding: 15px;
+      border-radius: 12px;
+      text-decoration: none;
+      color: #333;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 22px rgba(0,0,0,0.15);
+    }
+
+    .project-card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .project-card p {
+      margin-top: 12px;
+      font-size: 1em;
+      font-weight: 500;
+    }
+  </style>
+<style>
+  .profiles-section {
+    text-align: center;
+    padding: 60px 10%;
+    background: #fafafa;
+  }
+
+  .profiles-section .section-title {
+    font-size: 2.2em;
+    color: #007BFF;
+    margin-bottom: 40px;
+  }
+
+  .profiles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 30px;
+    justify-items: center;
+  }
+
+  .profile-card {
+    text-decoration: none;
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    color: #333;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 140px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .profile-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  }
+
+  .profile-card i {
+    font-size: 32px;
+    margin-bottom: 10px;
+    color: #007BFF;
+  }
+
+  .profile-card p {
+    margin: 0;
+    font-weight: bold;
+  }
+</style>
+<!-- Font Awesome for icons -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
+<section class="contact-section" id="contact">
+<h2 class="section-title">CONTACT ME</h2>
+<div class="contact-container">
+<form action="mailto:suryamanjri@gmail.com" class="contact-form" enctype="text/plain" method="post">
+<div class="form-group">
+<input name="name" required="" type="text"/>
+<label>Name*</label>
+</div>
+<div class="form-group">
+<input name="email" required="" type="email"/>
+<label>Email*</label>
+</div>
+<div class="form-group">
+<input name="subject" type="text"/>
+<label>Subject</label>
+</div>
+<div class="form-group">
+<textarea name="message" required="" rows="5"></textarea>
+<label>Message</label>
+</div>
+<button type="submit">Send Message</button>
+</form>
+<div class="contact-info">
+<h3>Surya Manjri</h3>
+<p>Data Scientist / Data Analyst</p>
+<p><strong>LinkedIn</strong><br/><a href="https://www.linkedin.com/in/surya-manjri-12617b248/" target="_blank">linkedin.com/in/surya-manjri-12617b248/</a></p>
+<p><strong>Email</strong><br/><a href="mailto:suryamanjri@gmail.com">suryamanjri@gmail.com</a></p>
+</div>
+</div>
+</section>
+<style>
+  .contact-section {
+    padding: 80px 10%;
+    background: linear-gradient(120deg, #f8f9fa, #edf0f5);
+    text-align: center;
+  }
+
+  .contact-section .section-title {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 50px;
+  }
+
+  .contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 50px;
+  }
+
+  .contact-form {
+    flex: 1;
+    min-width: 280px;
+    max-width: 48%;
+  }
+
+  .form-group {
+    position: relative;
+    margin-bottom: 30px;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ccc;
+    border-radius: 6px;
+    outline: none;
+    font-size: 1em;
+    background: none;
+    transition: border-color 0.3s;
+  }
+
+  .form-group label {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    color: #999;
+    pointer-events: none;
+    transition: 0.3s ease all;
+    background-color: white;
+    padding: 0 5px;
+  }
+
+  .form-group input:focus + label,
+  .form-group textarea:focus + label,
+  .form-group input:not(:placeholder-shown) + label,
+  .form-group textarea:not(:placeholder-shown) + label {
+    top: -10px;
+    left: 10px;
+    font-size: 0.8em;
+    color: #7b2cbf;
+  }
+
+  .contact-form button {
+    width: 100%;
+    padding: 14px;
+    background-color: #7b2cbf;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+
+  .contact-form button:hover {
+    background-color: #5a189a;
+  }
+
+  .contact-info {
+    flex: 1;
+    min-width: 260px;
+    max-width: 40%;
+    text-align: left;
+  }
+
+  .contact-info h3 {
+    font-size: 1.6em;
+    color: #333;
+    margin-bottom: 10px;
+  }
+
+  .contact-info p {
+    font-size: 1em;
+    color: #555;
+    margin-bottom: 16px;
+  }
+
+  .contact-info a {
+    color: #007BFF;
+    text-decoration: none;
+  }
+
+  .contact-info a:hover {
+    text-decoration: underline;
+  }
+</style>
+</body>
+</html></body></html>
